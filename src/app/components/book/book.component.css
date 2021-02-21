@@ -1,0 +1,18 @@
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    border: bisque 2px solid;
+    border-radius: 5px;
+}
+
+.book-card__buy {
+    width: 10%;
+    padding: 10px;
+    background-color: orange;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}

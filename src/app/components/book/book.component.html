@@ -1,0 +1,11 @@
+<ul class="list-books">
+    <li class="book-card" *ngFor="let book of books">
+        <h4>{{ book.name }}</h4>
+        <p>{{ book.description }}</p>
+        <span>{{ book.price }}</span>
+        <span>{{ book.category }}</span>
+        <span>{{ book.createDate }}</span>
+        <button class="book-card__buy">Buy</button>
+    </li>
+</ul>
+
