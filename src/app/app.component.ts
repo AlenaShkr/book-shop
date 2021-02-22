@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookShop';
+  choicedBook: any;
+  handlerBye(book: any): void {
+    this.choicedBook = book;
+    const offer = [];
+    offer.push(book);
+    console.log(offer);
+  }
 }

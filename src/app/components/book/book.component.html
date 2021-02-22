@@ -5,7 +5,7 @@
         <span>{{ book.price }}</span>
         <span>{{ book.category }}</span>
         <span>{{ book.createDate }}</span>
-        <button class="book-card__buy" [disabled]="!book.isAvailable">Buy</button>
+        <button class="book-card__buy" (click)="onBye(book)" [disabled]="!book.isAvailable">Buy</button>
     </li>
 </ul>
 
