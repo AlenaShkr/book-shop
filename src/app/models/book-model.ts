@@ -1,7 +1,7 @@
 export enum Category {
-    novella,
-    poem,
-    adventure,
+    novella = 'novella',
+    poem = 'poem',
+    adventure = 'adventure',
 }
 
 export interface IBookModel {

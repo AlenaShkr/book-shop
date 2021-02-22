@@ -15,7 +15,7 @@ const listOfBooks: IBookModel[] = [
     name: 'The Little',
     description: 'shdklhkjhjgsrhjkahjkrhfjh',
     price: 10.99,
-    category: 0,
+    category: Category.poem,
     createDate: 'April 1943 ',
     isAvailable: false,
 }
