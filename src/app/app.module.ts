@@ -5,14 +5,9 @@ import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, BookComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
