@@ -34,7 +34,7 @@ export class BookComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('onInit');
+    console.log(this.books[0]);
   }
 
   onBye(book: IBookModel): void {

@@ -13,7 +13,7 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
+  /* eslint-disable quotes*/
   it("should have as title 'bookShop'", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
