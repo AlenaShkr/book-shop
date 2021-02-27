@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IBookModel } from './models/book-model';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,10 @@ export class AppComponent {
 
   choicedBook: any;
 
+  bookList: IBookModel[] = [];
+
   handlerBye(book: any): void {
     this.choicedBook = book;
-    const order = [];
-    order.push(book);
-    console.log(order);
+    this.bookList.push(book);
   }
 }

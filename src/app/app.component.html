@@ -1,2 +1,2 @@
 <app-book (byeRequestEvent)="handlerBye($event)"></app-book>
-<p>{{ choicedBook }}</p>
+<app-cart *ngFor="let book of bookList" [book]="book"></app-cart>
