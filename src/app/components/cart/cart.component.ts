@@ -7,7 +7,7 @@ import { IBookModel } from 'src/app/models/book-model';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  @Input() bookList: any;
+  @Input() bookList: Set<Object>;
 
   constructor() {}
 

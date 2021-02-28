@@ -12,7 +12,7 @@ export class AppComponent {
 
   choicedBook: any;
 
-  bookList: any = new Set();
+  bookList: Set<Object> = new Set();
 
   handlerBye(book: any): void {
     this.choicedBook = book;
