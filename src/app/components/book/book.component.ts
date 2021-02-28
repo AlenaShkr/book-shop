@@ -19,6 +19,14 @@ const listOfBooks: IBookModel[] = [
     createDate: 'April 1943 ',
     isAvailable: false,
   },
+  {
+    name: 'We',
+    description: 'shdklhkjhjgsrhjkahjkrhfjhfdkjkjkhjggfjdvbbfjfbvbbvbvVmfkl \n jsaajhahfhjdhdjsbhbjhbbdhbbhfbdhbbhfbhd',
+    price: 10.99,
+    category: Category.poem,
+    createDate: 'May 1987 ',
+    isAvailable: true,
+  },
 ];
 
 @Component({

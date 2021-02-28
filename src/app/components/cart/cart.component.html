@@ -1,4 +1,4 @@
-<div class="busket">
+<ng-container class="busket" *ngIf="bookList.size !== 0">
   <h2>Your order:</h2>
-  <app-cart-item [book]="book"></app-cart-item>
-</div>
+  <app-cart-item *ngFor="let book of bookList" [book]="book"></app-cart-item>
+</ng-container>

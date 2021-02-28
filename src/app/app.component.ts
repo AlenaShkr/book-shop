@@ -12,10 +12,10 @@ export class AppComponent {
 
   choicedBook: any;
 
-  bookList: IBookModel[] = [];
+  bookList: any = new Set();
 
   handlerBye(book: any): void {
     this.choicedBook = book;
-    this.bookList.push(book);
+    this.bookList.add(book);
   }
 }
