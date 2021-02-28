@@ -21,7 +21,7 @@ const listOfBooks: IBookModel[] = [
   },
   {
     name: 'We',
-    description: 'shdklhkjhjgsrhjkahjkrhfjhfdkjkjkhjggfjdvbbfjfbvbbvbvVmfkl \n jsaajhahfhjdhdjsbhbjhbbdhbbhfbdhbbhfbhd',
+    description: 'shdklhkjhjgsrh jkahjkrhfjhfdkjk jkhjggfjdvbb fjfbvbbvbvVmfkl jsaajhahfhjdhdjsbhbjhb bd hbb hfbdhbb hfbhd',
     price: 10.99,
     category: Category.poem,
     createDate: 'May 1987 ',

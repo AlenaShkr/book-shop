@@ -1,7 +1,7 @@
 <ul class="list-books">
     <li class="book-card" *ngFor="let book of books">
         <h4>{{ book.name }}</h4>
-        <p>{{ book.description }}</p>
+        <p class="book-description">{{ book.description }}</p>
         <span>{{ book.price }}</span>
         <span>{{ book.category }}</span>
         <span>{{ book.createDate }}</span>

@@ -1,3 +1,11 @@
+.list-books {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+
+  width: 80vw;
+}
+
 .book-card {
   display: flex;
   flex-direction: column;
@@ -9,10 +17,13 @@
 }
 
 .book-card__buy {
-  width: 10%;
-  padding: 10px;
+  padding: 0.8rem 1.5rem;
   background-color: orange;
-  margin-bottom: 10px;
+  margin: 1rem;
   border: none;
   border-radius: 10px;
+}
+
+.book-description {
+  font-size: 0.8rem;
 }
