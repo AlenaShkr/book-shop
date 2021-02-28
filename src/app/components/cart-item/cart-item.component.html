@@ -1,5 +1,6 @@
 <div class="card">
   <p class="card-title">{{ book.name }}</p>
+  <button (click)="onDeleteBook(book)">Delete Book</button>
   <div>
     <button (click)="onAdd()">+</button>
     <span class="count-book">{{ count }}</span>

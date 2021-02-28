@@ -12,4 +12,8 @@ export class CartComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  handlerDeleteBook(book: any): void {
+    this.bookList.delete(book);
+  }
 }

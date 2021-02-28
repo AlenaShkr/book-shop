@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { IBookModel } from 'src/app/models/book-model';
 
 @Component({
@@ -9,6 +9,7 @@ import { IBookModel } from 'src/app/models/book-model';
 })
 export class CartItemComponent implements OnInit {
   @Input() book: IBookModel;
+  @Output() deleteRequestEvent = new EventEmitter<IBookModel>();
 
   count: number = 1;
   buyIsAvailable: boolean;
@@ -30,5 +31,9 @@ export class CartItemComponent implements OnInit {
     } if (this.count === 1) {
       this.buyIsAvailable = true;
     }
+  }
+
+  onDeleteBook(book) {
+    this.deleteRequestEvent.emit(book)
   }
 }
