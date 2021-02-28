@@ -1,7 +1,7 @@
 <div class="card">
   <p>{{ book.name }}</p>
-  <button (click)="Add()">+</button>
+  <button (click)="onAdd()">+</button>
   <span>count {{ count }}</span>
-  <button (click)="Delete()" [disabled]="buyIsAvailable">-</button>
+  <button (click)="onDelete()" [disabled]="buyIsAvailable">-</button>
   <div></div>
 </div>

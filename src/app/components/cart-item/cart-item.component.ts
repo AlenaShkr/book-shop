@@ -19,12 +19,12 @@ export class CartItemComponent implements OnInit {
     this.buyIsAvailable = true;
   }
 
-  Add() {
+  onAdd() {
     this.count += 1;
     this.buyIsAvailable = false;
   }
 
-  Delete() {
+  onDelete() {
     if (this.count > 1) {
       this.count -= 1;
     } if (this.count === 1) {
