@@ -1,3 +1,10 @@
-* {
-  box-sizing: border-box;
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  background-color: rgb(181, 215, 216);
+  border: darkcyan;
+  border-radius: 10px;
 }

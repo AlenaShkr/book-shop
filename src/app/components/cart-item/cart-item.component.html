@@ -1,7 +1,8 @@
 <div class="card">
-  <p>{{ book.name }}</p>
-  <button (click)="onAdd()">+</button>
-  <span>count {{ count }}</span>
-  <button (click)="onDelete()" [disabled]="buyIsAvailable">-</button>
-  <div></div>
+  <p class="card-title">{{ book.name }}</p>
+  <div>
+    <button (click)="onAdd()">+</button>
+    <span class="count-book">{{ count }}</span>
+    <button (click)="onDelete()" [disabled]="buyIsAvailable">-</button>
+  </div>
 </div>
