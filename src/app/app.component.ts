@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IBookModel } from './models/book-model';
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,17 @@ import { IBookModel } from './models/book-model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  @ViewChild('appTitle') appTitle: any; 
+
   title = 'bookShop';
 
   choicedBook: any;
 
   bookList: Set<Object> = new Set();
+
+  ngAfterViewInit(): void {
+    this.appTitle.nativeElement.textContent =  'Book Shop';
+  }
 
   handlerBye(book: any): void {
     this.choicedBook = book;
