@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { Category, IBookModel } from '../../models/book-model';
+import { Category, IBookModel } from '../models/book-model';
 
 const listOfBooks: IBookModel[] = [
   {

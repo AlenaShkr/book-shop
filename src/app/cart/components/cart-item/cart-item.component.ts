@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
-import { IBookModel } from 'src/app/models/book-model';
+import { IBookModel } from 'src/app/books/models/book-model';
 
 @Component({
   selector: 'app-cart-item',
