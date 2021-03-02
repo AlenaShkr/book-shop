@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { BooksModule } from './books/books.module';
-import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { CartModule } from './cart/cart.module';
   imports: [BrowserModule,
   BooksModule,
   CartModule,
-  OrdersModule],
+  SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
