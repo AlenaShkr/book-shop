@@ -36,7 +36,7 @@ export class BooksService {
 
   constructor() { }
 
-  getBooks() {
+  getBooks(): IBookModel[] {
     return this.listOfBooks;
   }
 }

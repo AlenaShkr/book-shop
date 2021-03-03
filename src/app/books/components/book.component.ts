@@ -13,14 +13,18 @@ export class BookComponent implements OnInit {
   @Output() byeRequestEvent = new EventEmitter<IBookModel>();
 
   books: IBookModel[];
-  
+
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
-    this.books = this.booksService.getBooks();
+    this.getBooks();
   }
 
   onBye(book: IBookModel): void {
     this.byeRequestEvent.emit(book);
+  }
+
+  getBooks(): void {
+    this.books = this.booksService.getBooks();
   }
 }
