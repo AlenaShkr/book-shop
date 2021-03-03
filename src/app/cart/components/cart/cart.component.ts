@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,11 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  @Input() bookList: Set<Object>;
+  //@Input() bookList: Set<Object>;
+  bookList: Set<Object>;
 
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bookList = this.cartService.bookList;
+  }
 
   handlerDeleteBook(book: any): void {
     this.bookList.delete(book);
