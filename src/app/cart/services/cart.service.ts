@@ -12,13 +12,14 @@ export class CartService {
 
   bookList: Set<Object> = new Set();
 
-  constructor() { }
+  constructor() {}
 
   addBook(book): Set<Object> {
     this.cartProduct = book;
     this.bookList.add(this.cartProduct);
-    this.totalQuantity =+ 1;
-    this.totalSum =+ this.cartProduct.price;
+    this.totalQuantity += 1;
+    this.totalSum += this.cartProduct.price;
+    console.log(this.totalQuantity, this.totalSum);
     return this.bookList;
 
   }

@@ -1,4 +1,6 @@
 <ng-container class="busket" *ngIf="bookList.size !== 0">
   <h2>Your order:</h2>
   <app-cart-item *ngFor="let book of bookList" [book]="book" (deleteRequestEvent)="handlerDeleteBook($event)"></app-cart-item>
+  <div><span>Total:</span><span>{{ totalQuantity }} book(s) </span><span>{{ totalSum }}</span></div>
+  <button (click)="handlerDeleteAllBook()">Delete all books</button>
 </ng-container>

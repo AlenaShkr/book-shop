@@ -9,14 +9,27 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
   //@Input() bookList: Set<Object>;
   bookList: Set<Object>;
+  totalQuantity: number;
+  totalSum: number;
 
   constructor(private cartService: CartService) {}
-
+  
   ngOnInit(): void {
     this.bookList = this.cartService.bookList;
+    this.totalQuantity = this.cartService.totalQuantity;
+    this.totalSum = this.cartService.totalSum;
   }
 
   handlerDeleteBook(book: any): void {
     this.bookList.delete(book);
+  }
+
+  handlerDeleteAllBook(): void {
+    this.removeAllBooks();
+  }
+
+  removeAllBooks(): Set<Object> {
+    this.bookList = this.cartService.removeAllBooks();
+    return this.bookList;
   }
 }
