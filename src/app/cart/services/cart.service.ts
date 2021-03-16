@@ -11,15 +11,19 @@ export class CartService {
   totalSum: number = 0;
 
   bookList: Set<Object> = new Set();
-
+  resultList: Object[] = [];
+  obj: any = {totalQuantity: 0, totalSum: 0}
   constructor() {}
 
-  addBook(book): Set<Object> {
+  addBook(book: IBookModel): any {
     this.cartProduct = book;
     this.bookList.add(this.cartProduct);
     this.totalQuantity += 1;
     this.totalSum += this.cartProduct.price;
     console.log(this.totalQuantity, this.totalSum);
+    this.bookList['totalSum'] = this.totalSum;
+    this.bookList['totalQuant'] = this.totalQuantity;
+    console.log(this.bookList);
     return this.bookList;
 
   }

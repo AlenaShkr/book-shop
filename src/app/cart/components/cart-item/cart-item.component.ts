@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { IBookModel } from 'src/app/books/models/book-model';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -14,7 +15,7 @@ export class CartItemComponent implements OnInit {
   count: number = 1;
   buyIsAvailable: boolean;
 
-  constructor() {}
+  constructor( private cartService: CartService) {}
 
   ngOnInit(): void {
     this.buyIsAvailable = true;

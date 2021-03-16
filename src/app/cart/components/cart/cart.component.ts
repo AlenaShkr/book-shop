@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -7,7 +7,6 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  //@Input() bookList: Set<Object>;
   bookList: Set<Object>;
   totalQuantity: number;
   totalSum: number;
@@ -16,10 +15,12 @@ export class CartComponent implements OnInit {
   
   ngOnInit(): void {
     this.bookList = this.cartService.bookList;
+  }
+
+  ngDoCheck(): void {
     this.totalQuantity = this.cartService.totalQuantity;
     this.totalSum = this.cartService.totalSum;
   }
-
   handlerDeleteBook(book: any): void {
     this.bookList.delete(book);
   }
