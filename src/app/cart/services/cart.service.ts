@@ -17,21 +17,24 @@ export class CartService {
 
   addBook(book: IBookModel): any {
     this.cartProduct = book;
-    this.bookList.add(this.cartProduct);
-    this.totalQuantity += 1;
-    this.totalSum += this.cartProduct.price;
-    console.log(this.totalQuantity, this.totalSum);
-    this.bookList['totalSum'] = this.totalSum;
-    this.bookList['totalQuant'] = this.totalQuantity;
-    console.log(this.bookList);
+    
+    if (!this.bookList.has(this.cartProduct)) {
+      this.bookList.add(this.cartProduct);
+      this.totalQuantity += 1;
+      this.totalSum += this.cartProduct.price;
+    }
+    
+    // this.bookList['totalSum'] = this.totalSum;
+    // this.bookList['totalQuant'] = this.totalQuantity;
+    // console.log(this.bookList);
     return this.bookList;
 
   }
 
-  removeBook(book): Set<Object> {
+  removeBook(book: IBookModel): Set<Object> {
     this.bookList.delete(book);
-    this.totalQuantity =- 1;
-    this.totalSum =- this.cartProduct.price;
+    this.totalQuantity -= 1;
+    this.totalSum -= book.price;
     return this.bookList;
 
   }

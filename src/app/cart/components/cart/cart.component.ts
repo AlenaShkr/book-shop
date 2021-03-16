@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IBookModel } from 'src/app/books/models/book-model';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -22,13 +23,15 @@ export class CartComponent implements OnInit {
     this.totalSum = this.cartService.totalSum;
   }
   handlerDeleteBook(book: any): void {
-    this.bookList.delete(book);
+    this.removeBook(book);
   }
 
   handlerDeleteAllBook(): void {
     this.removeAllBooks();
   }
-
+  removeBook(book: IBookModel): void {
+    this.bookList = this.cartService.removeBook(book);
+  }
   removeAllBooks(): Set<Object> {
     this.bookList = this.cartService.removeAllBooks();
     return this.bookList;
