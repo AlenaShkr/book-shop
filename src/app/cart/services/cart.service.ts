@@ -37,12 +37,14 @@ export class CartService {
 
   }
 
-  increaseQuantity(): void {
+  increaseQuantity(book: IBookModel): void {
     this.totalQuantity += 1;
+    this.totalSum += book.price;
   }
 
-  decreaseQuantity(): void {
+  decreaseQuantity(book: IBookModel): void {
     this.totalQuantity -= 1;
+    this.totalSum -= book.price;
   }
 
   removeAllBooks(): Set<Object> {
