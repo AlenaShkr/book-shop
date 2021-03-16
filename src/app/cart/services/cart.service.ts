@@ -9,10 +9,8 @@ export class CartService {
   cartProduct: IBookModel;
   totalQuantity: number = 0;
   totalSum: number = 0;
-
   bookList: Set<Object> = new Set();
-  resultList: Object[] = [];
-  obj: any = {totalQuantity: 0, totalSum: 0}
+  
   constructor() {}
 
   addBook(book: IBookModel): any {
@@ -40,11 +38,11 @@ export class CartService {
   }
 
   increaseQuantity(): void {
-
+    this.totalQuantity += 1;
   }
 
   decreaseQuantity(): void {
-
+    this.totalQuantity -= 1;
   }
 
   removeAllBooks(): Set<Object> {

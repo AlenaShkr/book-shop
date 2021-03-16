@@ -23,12 +23,14 @@ export class CartItemComponent implements OnInit {
 
   onAdd() {
     this.count += 1;
+    this.increaseQuantity();
     this.buyIsAvailable = false;
   }
 
   onDelete() {
     if (this.count > 1) {
       this.count -= 1;
+      this.decreaseQuantity();
     } if (this.count === 1) {
       this.buyIsAvailable = true;
     }
@@ -36,5 +38,13 @@ export class CartItemComponent implements OnInit {
 
   onDeleteBook(book) {
     this.deleteRequestEvent.emit(book)
+  }
+
+  increaseQuantity(): void {
+    this.cartService.increaseQuantity();
+  }
+  
+  decreaseQuantity(): void {
+    this.cartService.decreaseQuantity();
   }
 }
