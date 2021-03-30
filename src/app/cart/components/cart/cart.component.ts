@@ -8,14 +8,14 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  bookList: Set<Object>;
+  orderList: Object[];
   totalQuantity: number;
   totalSum: number;
 
   constructor(private cartService: CartService) {}
   
   ngOnInit(): void {
-    this.bookList = this.cartService.bookList;
+    this.orderList = this.cartService.orderList;
   }
 
   ngDoCheck(): void {
@@ -23,17 +23,17 @@ export class CartComponent implements OnInit {
     this.totalSum = this.cartService.totalSum;
   }
   handlerDeleteBook(book: any): void {
-    this.removeBook(book);
+    // this.removeBook(book);
   }
 
   handlerDeleteAllBook(): void {
-    this.removeAllBooks();
+    // this.removeAllBooks();
   }
-  removeBook(book: IBookModel): void {
-    this.bookList = this.cartService.removeBook(book);
-  }
-  removeAllBooks(): Set<Object> {
-    this.bookList = this.cartService.removeAllBooks();
-    return this.bookList;
-  }
+  // removeBook(book: IBookModel): void {
+  //   this.orderList = this.cartService.removeBook(book);
+  // }
+  // removeAllBooks(): Set<Object> {
+  //   this.orderList = this.cartService.removeAllBooks();
+  //   return this.bookList;
+  // }
 }

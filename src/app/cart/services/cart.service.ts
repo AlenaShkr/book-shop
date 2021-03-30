@@ -10,14 +10,17 @@ export class CartService {
   totalQuantity: number = 0;
   totalSum: number = 0;
   bookList: Set<Object> = new Set();
-  
+  orderList: Object[] = [];
   constructor() {}
 
   addBook(book: IBookModel): any {
     this.cartProduct = book;
     
-    if (!this.bookList.has(this.cartProduct)) {
-      this.bookList.add(this.cartProduct);
+    if (!this.bookList.has(this.cartProduct['id'])) {
+      this.cartProduct['count'] = 1;
+      this.bookList.add(this.cartProduct['id']);
+      this.orderList.push(this.cartProduct);
+      console.log(this.orderList);
       this.totalQuantity += 1;
       this.totalSum += this.cartProduct.price;
     }
@@ -25,7 +28,7 @@ export class CartService {
     // this.bookList['totalSum'] = this.totalSum;
     // this.bookList['totalQuant'] = this.totalQuantity;
     // console.log(this.bookList);
-    return this.bookList;
+    return this.orderList;
 
   }
 
