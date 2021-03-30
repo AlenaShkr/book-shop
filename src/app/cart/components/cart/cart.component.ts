@@ -23,17 +23,17 @@ export class CartComponent implements OnInit {
     this.totalSum = this.cartService.totalSum;
   }
   handlerDeleteBook(book: any): void {
-    // this.removeBook(book);
+    this.removeBook(book);
   }
 
   handlerDeleteAllBook(): void {
-    // this.removeAllBooks();
+     this.removeAllBooks();
   }
-  // removeBook(book: IBookModel): void {
-  //   this.orderList = this.cartService.removeBook(book);
-  // }
-  // removeAllBooks(): Set<Object> {
-  //   this.orderList = this.cartService.removeAllBooks();
-  //   return this.bookList;
-  // }
+  removeBook(book: IBookModel): void {
+    this.orderList = this.cartService.removeBook(book);
+  }
+  removeAllBooks(): Object[] {
+    this.orderList = this.cartService.removeAllBooks();
+    return this.orderList;
+  }
 }

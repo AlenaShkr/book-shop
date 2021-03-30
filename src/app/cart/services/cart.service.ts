@@ -20,41 +20,41 @@ export class CartService {
       this.cartProduct['count'] = 1;
       this.bookList.add(this.cartProduct['id']);
       this.orderList.push(this.cartProduct);
-      console.log(this.orderList);
       this.totalQuantity += 1;
       this.totalSum += this.cartProduct.price;
     }
-    
-    // this.bookList['totalSum'] = this.totalSum;
-    // this.bookList['totalQuant'] = this.totalQuantity;
-    // console.log(this.bookList);
     return this.orderList;
-
   }
 
-  removeBook(book: IBookModel): Set<Object> {
-    this.bookList.delete(book);
-    this.totalQuantity -= 1;
-    this.totalSum -= book.price;
-    return this.bookList;
-
+  removeBook(book: IBookModel): Object[] {
+    this.bookList.delete(book['id']);
+    const indexBook = this.orderList.indexOf(book);
+    this.totalQuantity -= book['count'];
+    this.totalSum -= book['count'] * book.price;
+    this.orderList.splice(indexBook, 1);
+    return this.orderList;
   }
 
   increaseQuantity(book: IBookModel): void {
+    const indexBook = this.orderList.indexOf(book);
+    this.orderList[indexBook]['count'] +=1;
     this.totalQuantity += 1;
     this.totalSum += book.price;
   }
 
   decreaseQuantity(book: IBookModel): void {
+    const indexBook = this.orderList.indexOf(book);
+    this.orderList[indexBook]['count'] -=1;
     this.totalQuantity -= 1;
     this.totalSum -= book.price;
   }
 
-  removeAllBooks(): Set<Object> {
+  removeAllBooks(): Object[] {
     this.bookList.clear();
     this.totalQuantity = 0;
     this.totalSum = 0;
-    return this.bookList;
+    this.orderList.length = 0;
+    return this.orderList;
   }
 
   updateCartData(): void {
