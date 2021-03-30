@@ -30,7 +30,7 @@ export class CartService {
     this.bookList.delete(book['id']);
     const indexBook = this.orderList.indexOf(book);
     this.totalQuantity -= book['count'];
-    this.totalSum -= book['count'] * book.price;
+    this.totalSum = Math.round((this.totalSum - book['count'] * book.price) * 100)/100;
     this.orderList.splice(indexBook, 1);
     return this.orderList;
   }
@@ -39,14 +39,14 @@ export class CartService {
     const indexBook = this.orderList.indexOf(book);
     this.orderList[indexBook]['count'] +=1;
     this.totalQuantity += 1;
-    this.totalSum += book.price;
+    this.totalSum = (Math.round((this.totalSum + book.price)*100))/100;
   }
 
   decreaseQuantity(book: IBookModel): void {
     const indexBook = this.orderList.indexOf(book);
     this.orderList[indexBook]['count'] -=1;
     this.totalQuantity -= 1;
-    this.totalSum -= book.price;
+    this.totalSum = Math.round((this.totalSum - book.price) * 100)/100;
   }
 
   removeAllBooks(): Object[] {
