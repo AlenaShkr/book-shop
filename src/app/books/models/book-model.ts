@@ -5,6 +5,7 @@ export enum Category {
 }
 
 export interface IBookModel {
+  id: number,
   name: string;
   description: string;
   price: number;
